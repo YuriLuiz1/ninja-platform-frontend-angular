@@ -1,7 +1,18 @@
+# Build Angular
+FROM node:18 AS build
+
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+RUN npm run build
+
+# Servir com nginx
 FROM nginx:alpine
 
 COPY nginx.conf /etc/nginx/conf.d/default.conf
-COPY dist/crud/browser/index.html /usr/share/nginx/html
+COPY --from=build /app/dist/crud/browser /usr/share/nginx/html
 
 EXPOSE 8080
 CMD ["nginx", "-g", "daemon off;"]
+
