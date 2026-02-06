@@ -1,0 +1,30 @@
+<header>
+    <div class="cabecalho_romance">
+        <h1>Ninja Romantico</h1>
+        <img src="/vetor_ninja_romance.png" alt="ninja_romance">
+    </div>
+</header>
+
+<section class="recommendations-container">
+    
+    <div class="anime-grid">
+      @for (anime of animeList(); track anime.id) {
+        <div class="anime-card" tabindex="0">
+          <div class="rating-badge">⭐ {{ anime.average || 'N/A' }} Average</div>
+          
+          <div class="poster-wrapper">
+            <img [src]="anime.capeImage" [alt]="anime.title">
+            <div class="card-overlay"></div>
+          </div>
+  
+          <div class="anime-info">
+            <h3>{{ anime.title || 'name not found! :c' }}</h3>
+            <p>{{ anime.synopisis | slice:0:120 }}...</p>
+            
+            <button class="view-btn" [routerLink]="['/anime-romance', anime.id]">Ver Pergaminho
+            </button>
+          </div>
+        </div>
+      }
+    </div>
+</section>

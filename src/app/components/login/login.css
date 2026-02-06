@@ -1,0 +1,158 @@
+.containerLogin{
+  min-height: 100vh;
+  min-width: 100vw;
+  background-image: url('/fundo_anime_platform.jpg');
+  background-size: cover;
+  background-color: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card{
+    background: #ffffff;
+    padding: 32px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-titulo{
+  display: flex;
+  align-items: center;
+  gap: 0px;
+}
+
+.logo-titulo h1 {
+  margin: 0;
+  margin-left: 60px;
+}
+
+.logo-titulo img{
+  width: 100px;
+  height: auto;
+}
+
+.alert_sucess {
+  background-color: transparent;
+  color: #155724;
+}
+
+/* Alerta de erro */
+.alert_error {
+  background-color: transparent;
+  color: #721c24;
+}
+
+.alerta {
+  padding: 0px 16px;
+  margin-bottom: 30px;
+  font-size: 14px;
+  animation: slideDown 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Animação de entrada */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Form */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Labels */
+label {
+  font-size: 14px;
+  color: #444;
+  margin-bottom: 6px;
+}
+
+/* Inputs */
+input {
+  padding: 10px 12px;
+  margin-bottom: 16px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  transition: border-color 0.2s;
+  width: 100%; /* do card, não da tela */
+}
+
+input:focus {
+  outline: none;
+  border-color: #000;
+}
+
+/* Adicionado: estilo para input desabilitado */
+input:disabled {
+  background-color: #f5f5f5;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Botão */
+button {
+  margin-top: 8px;
+  padding: 12px;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+  width: 100%; /* do card */
+  box-shadow: 1px 1px 3px black;
+}
+
+button:hover {
+  background: #222;
+}
+
+/* Adicionado: estilo para botão desabilitado */
+button:disabled {
+  background-color: #666;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.button-anc{
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  background-color: black;
+  width: 100px;
+  height: 37px;
+  border-radius: 6px;
+  transition: background 0.2s;
+  box-shadow: 1px 1px 3px black;
+}
+
+a{
+  text-decoration: none;
+  font-size: 12.5px;
+  text-align: center;
+  padding: 5px;
+  color: white;
+}
+
+.button-anc:hover{
+  background: #222;
+}
+

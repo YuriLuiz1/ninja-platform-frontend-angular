@@ -1,0 +1,28 @@
+<div *ngIf="anime()" class="detalhe-container">
+    <h1>{{ anime().title }}</h1>
+    <img [src]="anime().capeImage" [alt]="anime().title">
+ 
+    <br/>
+    <span class="rating">Nota: {{ anime().average }}</span>
+    <br/>
+    <br/>
+    
+    <div class="description-grid">
+      
+      <div class="description-box synopsis-box">
+        <h2>Sinopse</h2>
+        <p>{{ anime().synopisis }}</p>
+      </div>
+      
+      <div class="description-box opinion-box">
+        <h2>Veredito do Ninja</h2>
+        <p>{{ anime().opinionNinja }}</p>
+      </div>
+      
+    </div>
+  
+  </div>
+
+    <footer class="main-footer">
+      <p>© 2026 Dojo Digital - Todos os direitos reservados ao mestre ninja Yuri-Dev.</p>
+    </footer>

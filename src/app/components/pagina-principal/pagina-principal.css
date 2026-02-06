@@ -1,0 +1,439 @@
+/* --- Importação de Fontes Ninja --- */
+@import url('https://fonts.googleapis.com/css2?family=Shojumaru&family=Fredoka:wght@300;400;600&family=Montserrat:ital,wght@1,300&display=swap');
+
+/* --- Configurações Gerais e Fundo --- */
+:host {
+  display: block;
+  min-height: 100vh;
+  /* Fundo radial para destacar o efeito de vidro central */
+  background: radial-gradient(circle at center, #1a1a1a 0%, #000000 100%);
+  color: #fff;
+  /* Fonte global mais limpa e moderna */
+  font-family: 'Fredoka', sans-serif;
+}
+
+.arsenal-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* --- Cabeçalho Reformulado --- */
+.main-header {
+  position: relative; /* Necessário para prender os ícones sociais no canto */
+  padding: 50px 20px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.ninja-title {
+  margin: 0;
+  font-family: 'Shojumaru', cursive; /* Fonte Oriental */
+  font-size: 3.5rem;
+  font-weight: normal;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+  letter-spacing: 4px;
+}
+
+.header-subtitle {
+  font-family: 'Montserrat', sans-serif;
+  font-style: italic;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 10px;
+  margin-bottom: -40px;
+  font-size: 1.1rem;
+}
+
+/* --- Social Links (Canto Inferior Direito do Cabeçalho) --- */
+.header-socials {
+  position: absolute;
+  bottom: 15px;
+  right: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+}
+
+.social-item {
+  text-decoration: none;
+  display: flex;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.4);
+  transition: all 0.3s ease;
+  align-items: center;
+}
+
+.social-item i{
+    margin-right: 8px;
+    font-size: 1.1rem;
+    vertical-align: middle;
+    transition: color 0.3s ease;
+}
+
+.social-item b {
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 600;
+}
+
+.social-item:hover {
+  color: #ff9f43; /* Verde Ninja no hover */
+  transform: translateX(-8px);
+  text-shadow: 0 0 8px rgba(255, 159, 67, 0.4);
+}
+
+/* --- Área de Conteúdo Principal --- */
+.content-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+}
+
+.section-title {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-top: -50px;
+  margin-bottom: 50px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  opacity: 0.9;
+}
+
+/* --- Grid de Cards --- */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  padding: 20px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* --- Estilo dos Cards (Glassmorphism + Zoom) --- */
+.category-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 45px 30px;
+  text-align: center;
+  cursor: pointer;
+  /* Transição suave que você curtiu */
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efeito de Zoom e Elevação (Interação que ficou incrível) */
+.category-card:hover {
+  transform: translateY(-12px) scale(1.03);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+.icon-container {
+  font-size: 4.5rem;
+  margin-bottom: 25px;
+  transition: transform 0.4s ease;
+  filter: drop-shadow(0 0 10px rgba(255,255,255,0.1));
+}
+
+.category-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -150%; /* Começa bem à esquerda, fora da visão */
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        to right,
+        transparent,
+        rgba(255, 255, 255, 0.2), /* Brilho branco suave */
+        transparent
+    );
+    transform: skewX(-25deg); /* Inclina a luz para parecer um reflexo natural */
+    transition: 0.7s cubic-bezier(0.4, 0, 0.2, 1); /* Movimento fluído */
+    pointer-events: none; /* Garante que o reflexo não bloqueie cliques */
+}
+
+/* Dispara o reflexo no Hover */
+.category-card:hover::before {
+    left: 150%; /* Faz a luz atravessar o card até o outro lado */
+}
+
+.category-card:hover .icon-container {
+  transform: scale(1.15) rotate(8deg);
+}
+
+.category-card h3 {
+  font-size: 1.6rem;
+  margin-bottom: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.category-card p {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+/* --- Cores de Destaque no Hover (O Brilho Ninja) --- */
+
+/* Romance - Rosa/Vermelho */
+.category-card.romance:hover {
+  border-color: #ff4d4d;
+  box-shadow: 0 15px 35px rgba(255, 77, 77, 0.25);
+}
+.category-card.romance:hover h3 { color: #ff4d4d; }
+
+/* Terror - Roxo */
+.category-card.terror:hover {
+  border-color: #a366ff;
+  box-shadow: 0 15px 35px rgba(163, 102, 255, 0.25);
+}
+.category-card.terror:hover h3 { color: #a366ff; }
+
+/* Ação - Laranja */
+.category-card.acao:hover {
+  border-color: #ff9f43;
+  box-shadow: 0 15px 35px rgba(255, 159, 67, 0.25);
+}
+.category-card.acao:hover h3 { color: #ff9f43; }
+
+.category-card.isekai:hover{
+    border-color: #009CD1;
+    box-shadow: 0 15px 35px rgba(0, 98, 133, 0.25);
+}
+
+.category-card.isekai:hover h3 { color:#009CD1; }
+
+.category-card.sports:hover{
+    border-color: #E1F200;
+    box-shadow: 0 15px 35px rgba(173, 189, 0, 0.25);
+}
+
+.category-card.sports:hover h3 { color: #E1F200; }
+
+.category-card.classicos:hover{
+    border-color: #09E300;
+    box-shadow: 0 15px 35px rgba(118, 100, 45, 0.25);
+}
+
+.category-card.classicos:hover h3 { color: #09E300; }
+
+/* --- Rodapé --- */
+.main-footer {
+  padding: 30px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.4);
+  background: rgba(0, 0, 0, 0.2);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* --- Sistema de Partículas --- */
+.particles-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0; /* Fica atrás do texto */
+    pointer-events: none; /* Não atrapalha cliques nos links */
+}
+
+.particle {
+    position: absolute;
+    display: block;
+    width: 4px;
+    height: 4px;
+    background: rgba(255, 159, 67, 0.6); /* Cor de brasa (laranja) */
+    box-shadow: 0 0 10px #ff9f43, 0 0 20px #ff4d4d;
+    border-radius: 50%;
+    opacity: 0;
+    animation: flutuarParticula 6s linear infinite;
+}
+
+/* Criando variações de posição e tempo para cada partícula */
+.particle:nth-child(1) { left: 10%; animation-delay: 0s; width: 3px; }
+.particle:nth-child(2) { left: 30%; animation-delay: 2s; width: 5px; animation-duration: 8s; }
+.particle:nth-child(3) { left: 50%; animation-delay: 4s; width: 2px; }
+.particle:nth-child(4) { left: 75%; animation-delay: 1s; width: 4px; animation-duration: 7s; }
+.particle:nth-child(5) { left: 90%; animation-delay: 5s; width: 3px; }
+
+@keyframes flutuarParticula {
+    0% {
+        transform: translateY(110%) scale(0.5);
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(-20%) scale(1.5) translateX(30px);
+        opacity: 0;
+    }
+}
+
+/* Garante que o conteúdo do header fique acima das partículas */
+.header-content, .header-socials {
+    position: relative;
+    z-index: 1;
+}
+
+/* --- Seção da Barra de Pesquisa --- */
+.search-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px 10px; /* Espaço acima para separar do header */
+    position: relative;
+    z-index: 20; /* Fica acima das partículas do fundo se houver */
+}
+
+/* Wrapper para conter o input e o botão */
+.ninja-search-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 500px; /* Largura inicial */
+    display: flex;
+    align-items: center;
+}
+
+/* O Input Estilo Vidro */
+.ninja-input {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 100%;
+    padding: 18px 55px 18px 30px; /* Espaço extra na direita para o botão */
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px); /* Efeito vidro forte */
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 50px; /* Formato de pergaminho enrolado */
+    color: #fff;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 1.1rem;
+    outline: none; /* Remove a borda padrão feia do navegador */
+    /* Transição suave e elástica para a expansão */
+    transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.ninja-input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    font-style: italic;
+}
+
+.search-btn {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-btn:hover {
+    background: #ff9f43; 
+    color: #fff;
+    box-shadow: 0 0 15px rgba(255, 159, 67, 0.5);
+}
+
+/* --- O EFEITO DE FUMAÇA/EXPANSÃO (Quando Clica) --- */
+
+/* Quando o input está focado */
+.ninja-input:focus {
+    background: rgba(255, 255, 255, 0.12); /* Fica ligeiramente mais claro */
+    border-color: rgba(255, 159, 67, 0.6); /* Borda laranja brilhante */
+    width: 100%; /* Garante que usa o espaço disponível */
+    
+    /* O truque da fumaça usando múltiplas sombras */
+    box-shadow: 
+        0 0 0 5px rgba(255, 159, 67, 0.1), /* Halo interno sutil */
+        0 10px 30px rgba(0, 0, 0, 0.5), /* Sombra de profundidade */
+        0 0 50px rgba(255, 159, 67, 0.3), /* Brilho laranja médio */
+        0 0 100px rgba(255, 255, 255, 0.1); /* Fumaça branca externa */
+}
+
+/* Animação extra no botão quando o input foca */
+.ninja-input:focus + .search-btn {
+    color: #ff9f43;
+    transform: translateY(-50%) rotate(90deg); /* Gira a lupa */
+}
+
+/* Container das luzes */
+.glow-wrapper {
+  position: fixed; /* Fica fixo enquanto você rola a página */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Fica atrás de todos os elementos */
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* Base da esfera de luz */
+.blob {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, var(--blob-color) 0%, transparent 70%);
+  filter: blur(80px); /* O segredo do efeito suave */
+  opacity: 0.15; /* Bem sutil para não cansar a vista */
+  border-radius: 50%;
+  animation: moverAura 20s infinite alternate ease-in-out;
+}
+
+/* Cores específicas para combinar com seus gêneros */
+.blob-purple { 
+  --blob-color: #a366ff; /* Cor do Terror/Isekai */
+  top: 10%; 
+  left: 5%; 
+}
+.blob-blue { 
+  --blob-color: #3498db; /* Cor dos Clássicos */
+  bottom: 20%; 
+  right: 10%; 
+  animation-delay: -5s;
+}
+.blob-orange { 
+  --blob-color: #ff9f43; /* Cor da Ação/Brasas */
+  top: 40%; 
+  left: 45%; 
+  animation-duration: 25s;
+}
+
+/* Animação para as luzes não ficarem paradas */
+@keyframes moverAura {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(50px, 100px) scale(1.2); }
+}

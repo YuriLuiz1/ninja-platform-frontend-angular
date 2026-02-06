@@ -1,0 +1,47 @@
+<div class="containerLogin">
+    <div class="card">
+        <div class="logo-titulo">
+            <h1>Login Ninja</h1>
+            <img src="/logo.png" alt="Logo">
+        </div>
+
+        <div class="alerta">
+            <div *ngIf="messageSucess()" class="alert_sucess">
+                {{ messageSucess() }}
+            </div>
+            <div *ngIf="messageError()" class="alert_error">
+                {{ messageError() }}
+            </div>
+        </div>
+
+        <form (ngSubmit)="saveData()">
+            <label for="email">E-mail</label>
+            <input 
+            type="email"
+            [(ngModel)]="email"
+            name="email"
+            id="login-email"
+            placeholder="Insert your email"
+            [disabled]="sending()"/>
+
+            <label for="password">Password</label>
+            <input
+            type="password"
+            [(ngModel)]="password"
+            name="password"
+            id="login-password"
+            placeholder="Insert your password"
+            [disabled]="sending()"/>
+
+            <button type="submit" [disabled]="sending()">
+                <span>
+                    {{ sending() ? 'Sending Login...' : 'Login!' }}
+                </span>
+            </button>
+
+            <div class="button-anc">
+                <a [routerLink]="['/register']">I don't have account!</a>
+            </div>
+        </form>
+    </div>
+</div>
