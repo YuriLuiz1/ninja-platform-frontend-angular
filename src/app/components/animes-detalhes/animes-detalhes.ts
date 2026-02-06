@@ -4,12 +4,12 @@ import { AnimeService } from '../../services/anime-service';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-romance-detalhes',
+  selector: 'app-animes-detalhes',
   imports: [CommonModule],
-  templateUrl: './romance-detalhes.html',
-  styleUrl: './romance-detalhes.css',
+  templateUrl: './animes-detalhes.html',
+  styleUrl: './animes-detalhes.css',
 })
-export class RomanceDetalhes implements OnInit {
+export class AnimesDetalhes implements OnInit {
   private route = inject(ActivatedRoute);
   private animeService = inject(AnimeService);
 

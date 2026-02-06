@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AnimeRomance } from './anime-romance';
+import { CatalogoAnimes } from './catalogo-animes';
 
-describe('AnimeRomance', () => {
-  let component: AnimeRomance;
-  let fixture: ComponentFixture<AnimeRomance>;
+describe('CatalogoAnimes', () => {
+  let component: CatalogoAnimes;
+  let fixture: ComponentFixture<CatalogoAnimes>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AnimeRomance]
+      imports: [CatalogoAnimes]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(AnimeRomance);
+    fixture = TestBed.createComponent(CatalogoAnimes);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

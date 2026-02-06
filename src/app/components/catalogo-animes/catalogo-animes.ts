@@ -4,12 +4,12 @@ import { CommonModule, SlicePipe } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 @Component({
-  selector: 'app-anime-romance',
+  selector: 'app-catalogo-animes',
   imports: [CommonModule, SlicePipe, RouterModule],
-  templateUrl: './anime-romance.html',
-  styleUrl: './anime-romance.css',
+  templateUrl: './catalogo-animes.html',
+  styleUrl: './catalogo-animes.css',
 })
-export class AnimeRomance {
+export class CatalogoAnimes {
   private animeService = inject(AnimeService);
 
   animeList = signal<any[]>([]);
@@ -18,8 +18,8 @@ export class AnimeRomance {
     try{
       const response = await this.animeService.getRomanceAnimes();
 
-      if(response && response.romanceSearch){
-        this.animeList.set(response.romanceSearch);
+      if(response && response.animeSearch){
+        this.animeList.set(response.animeSearch);
       }else if(Array.isArray(response)){
         this.animeList.set(response)
       }
