@@ -7,7 +7,7 @@ import { AnimeRomance } from './components/anime-romance/anime-romance';
 import { RomanceDetalhes } from './components/romance-detalhes/romance-detalhes';
 
 export const routes: Routes = [
-    { path: '', component: PaginaSobre },
+    { path: '/', component: PaginaSobre },
     { path: 'login', component: Login},
     { path: 'register', component: Cadastro },
     { path: 'dojo', component: PaginaPrincipal},
