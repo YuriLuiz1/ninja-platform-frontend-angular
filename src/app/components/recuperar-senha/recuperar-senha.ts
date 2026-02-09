@@ -30,7 +30,7 @@ export class RecuperarSenha {
   solicitarCodigo() {
     this.carregando = true; // Mostra loader se tiver
 
-    this.http.post(`${this.apiUrl}`, { email: this.email }).subscribe({
+    this.http.post(`${this.apiUrl}/redefinir-senha`, { email: this.email }).subscribe({
       next: (res: any) => {
         this.mensagem = 'Código enviado!';
         this.etapa = 2; // <--- Esta variável muda o *ngIf no HTML
