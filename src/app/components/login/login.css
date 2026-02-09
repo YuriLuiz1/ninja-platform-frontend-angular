@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Titan+One&display=swap');
+
 .containerLogin{
   min-height: 100vh;
   min-width: 100vw;
@@ -156,3 +158,22 @@ a{
   background: #222;
 }
 
+.recovery-password{
+  margin-top: 15px;
+  padding: 8px;
+  background-color: black;
+  width: 146px;
+  border-radius: 6px;
+  box-shadow: 1px 1px 3px black;
+  transition: background 0.2s;
+}
+
+.recovery-password a {
+  color: white;
+  font-family: 'Nunito', sans-serif;
+  font-size: 12px;
+}
+
+.recovery-password:hover{
+  background: #222;
+}

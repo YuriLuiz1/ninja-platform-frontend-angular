@@ -16,7 +16,7 @@ export class CatalogoAnimes {
 
   async ngOnInit(){
     try{
-      const response = await this.animeService.getRomanceAnimes();
+      const response = await this.animeService.getAnimes();
 
       if(response && response.animeSearch){
         this.animeList.set(response.animeSearch);

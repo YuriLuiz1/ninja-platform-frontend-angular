@@ -1,0 +1,26 @@
+<div class="reset-container">
+    
+    <div class="containerInput">
+        
+        <div *ngIf="etapa === 1">
+          <h2>Esqueceu sua senha?</h2>
+          <p>Digite seu e-mail para receber um código ninja.</p>
+          <input type="email" [(ngModel)]="email" placeholder="seu-email@email.com">
+          <button (click)="solicitarCodigo()" [disabled]="carregando">
+            <span *ngIf="!carregando">Enviar código</span>
+            <span *ngIf="carregando">Enviando...</span>
+          </button>
+        </div>
+
+        <div *ngIf="etapa === 2">
+          <h2>Verificação Ninja 🥷</h2>
+          <p>Digite o código que enviamos para {{ email }}</p>
+          <input type="text" [(ngModel)]="code" placeholder="Código de 6 dígitos">
+          <input type="password" [(ngModel)]="newPassword" placeholder="Nova senha segura">
+          <button type="submit" (click)="redefinirSenha()">Alterar Senha</button>
+        </div>
+
+        <div *ngIf="mensagem" class="mensagem">{{ mensagem }}</div>
+    </div>
+  
+</div>

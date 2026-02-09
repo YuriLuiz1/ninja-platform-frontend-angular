@@ -9,7 +9,7 @@ export class AnimeService {
   private http = inject(HttpClient);
   private readonly myApiUrl = 'https://ninja-platform-backend.onrender.com/api';
 
-  async getRomanceAnimes(): Promise<any> {
+  async getAnimes(): Promise<any> {
     return await firstValueFrom(this.http.get<any>(`${this.myApiUrl}/get-anime`));
   }
 
