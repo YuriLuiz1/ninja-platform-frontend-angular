@@ -21,7 +21,7 @@
             <h3>{{ anime.title || 'name not found! :c' }}</h3>
             <p>{{ anime.synopisis | slice:0:120 }}...</p>
             
-            <button class="view-btn" [routerLink]="['/anime-romance', anime.id]">Ver Pergaminho
+            <button class="view-btn" [routerLink]="['/animes', anime.id]">Ver Pergaminho
             </button>
           </div>
         </div>
