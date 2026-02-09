@@ -11,6 +11,6 @@ export const routes: Routes = [
     { path: 'login', component: Login},
     { path: 'register', component: Cadastro },
     { path: 'dojo', component: PaginaPrincipal},
-    { path: 'anime-romance', component: CatalogoAnimes},
-    { path: 'anime-romance/:id', component: AnimesDetalhes}
+    { path: 'animes', component: CatalogoAnimes},
+    { path: 'animes/:id', component: AnimesDetalhes}
 ];
